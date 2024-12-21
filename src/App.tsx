@@ -1,14 +1,19 @@
 import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NotFound from './pages/notFound/notFound';
+import Home from "./pages/home/home.tsx";
 
-function App() {
-
+const App: React.FC = () => {
   return (
-    <>
-      <h1 className="text-5xl font-bold">
-        Hello world!
-      </h1>
-    </>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="" element={<Home />}/>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
+
